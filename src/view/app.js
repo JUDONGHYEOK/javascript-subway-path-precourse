@@ -20,4 +20,8 @@ export default class App {
   appendChildren() {
     this.$target.appendChild(this.inputContainer.component);
   }
+
+  reportError(error) {
+    alert(error);
+  }
 }

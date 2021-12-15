@@ -1,4 +1,13 @@
-const path = [
+export const stations = [
+  '교대',
+  '강남',
+  '역삼',
+  '남부터미널',
+  '양재',
+  '강남',
+  '양재시민의숲'
+];
+export const path = [
   {
     line: '2호선',
     point: ['교대', '강남', '역삼'],
