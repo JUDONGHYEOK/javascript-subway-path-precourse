@@ -1,4 +1,5 @@
 export const ID = {
+  APP: 'app',
   START_INPUT: 'departure-station-name-input',
   END_INPUT: 'arrival-station-name-input',
   SEARCH_BUTTON: 'search_button'
