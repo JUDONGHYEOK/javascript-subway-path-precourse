@@ -50,5 +50,6 @@ export default class Subway {
         }
       });
     }
+    return this.path;
   }
 }
