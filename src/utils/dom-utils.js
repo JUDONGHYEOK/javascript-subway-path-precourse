@@ -1,3 +1,5 @@
+import { ID } from '../constant/index.js';
+
 export const createInput = (text, inputId) => {
   return `<span>${text}<input id=${inputId}></input></span>`;
 };
@@ -33,4 +35,27 @@ export function createRadioBox(name, values) {
 
 export function createButton(text, id) {
   return `<button id=${id} type = "submit">${text}</button>`;
+}
+
+export function createTd(text) {
+  return `<td>${text}</td>`;
+}
+
+export function createTr(...tds) {
+  let tr = `<tr>`;
+  tds.forEach((td) => {
+    tr += createTd(td);
+  });
+  tr += `</tr>`;
+  return tr;
+}
+
+export function createPathTr(path) {
+  let tr = `<tr><td colspan = '2' >`;
+  path.forEach((station) => {
+    tr += `${station}->`;
+  });
+  tr = tr.slice(0, -2);
+  tr += `<td><tr>`;
+  return tr;
 }

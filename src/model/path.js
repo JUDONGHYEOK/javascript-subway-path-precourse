@@ -1,7 +1,11 @@
 export default class Path {
-  constructor() {
-    this.init();
+  constructor(point, distance, time) {
+    this.point = point;
+    this.distance = distance;
+    this.time = time;
   }
 
-  init() {}
+  included(start, departure) {
+    return this.point.includes(start) && this.point.includes(departure);
+  }
 }

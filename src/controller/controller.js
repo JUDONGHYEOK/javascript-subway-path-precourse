@@ -1,4 +1,4 @@
-import { ID } from '../constant/index.js';
+import { ERROR, ID } from '../constant/index.js';
 import { stations } from '../data/index.js';
 import validateStaions from '../utils/validation.js';
 
@@ -22,7 +22,19 @@ export default class Controller {
     const endStation = document.getElementById(ID.END_INPUT).value;
     const error = validateStaions(startStation, endStation, stations);
     if (error) {
-      this.view.reportError(error);
+      return this.view.reportError(error);
     }
+    let type;
+    document.getElementsByName('search-type').forEach((node) => {
+      if (node.checked) {
+        type = node.value;
+      }
+    });
+    const line = this.model.findShortestPath(type, startStation, endStation);
+    if (!line) {
+      return this.view.reportError(ERROR.NOT_CONNECTED);
+    }
+    const { distance, time, path } = this.model;
+    this.view.renderResult(type, distance, time, path);
   }
 }

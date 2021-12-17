@@ -5,7 +5,9 @@ export const stations = [
   '남부터미널',
   '양재',
   '강남',
-  '양재시민의숲'
+  '양재시민의숲',
+  'aa',
+  'bb'
 ];
 export const path = [
   {
@@ -25,5 +27,11 @@ export const path = [
     point: ['강남', '양재', '양재시민의숲'],
     distance: [2, 10],
     time: [8, 3]
+  },
+  {
+    line: 'ㅁ',
+    point: ['aa', 'bb'],
+    distance: [2],
+    time: [3]
   }
 ];
