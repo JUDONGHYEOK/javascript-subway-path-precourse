@@ -20,7 +20,6 @@ export default class Subway {
         );
       });
     });
-    console.log(this.case);
   }
 
   createDijkstra() {
@@ -40,6 +39,11 @@ export default class Subway {
     if (!this.path) {
       return undefined;
     }
+    this.calculate();
+    return this.path;
+  }
+
+  calculate() {
     this.distance = 0;
     this.time = 0;
     for (let i = 0; i < this.path.length - 1; i += 1) {
@@ -50,6 +54,5 @@ export default class Subway {
         }
       });
     }
-    return this.path;
   }
 }

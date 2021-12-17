@@ -1,4 +1,4 @@
-import { ERROR, ID } from '../constant/index.js';
+import { ERROR, ID, NAME } from '../constant/index.js';
 import { stations } from '../data/index.js';
 import validateStaions from '../utils/validation.js';
 
@@ -25,7 +25,7 @@ export default class Controller {
       return this.view.reportError(error);
     }
     let type;
-    document.getElementsByName('search-type').forEach((node) => {
+    document.getElementsByName(NAME.RADIO_OPTION).forEach((node) => {
       if (node.checked) {
         type = node.value;
       }
